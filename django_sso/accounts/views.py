@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
-import json
 
 from django.views.generic import CreateView
-#, UpdateView, ListView, DeleteView,View)
-#from django.views.generic.detail import SingleObjectMixin
 from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse_lazy
-#from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
 from django.contrib import messages
+from django.conf import settings
 
 from .models import UserPersonalMail
 from .forms import PersonalMailForm
@@ -17,7 +14,7 @@ class PersonalMailCreateView(CreateView):
     PAGE_NAME = 'email pessoal'
     model = UserPersonalMail
     form_class = PersonalMailForm
-    success_url = reverse_lazy('redirect_view:redirect')
+    success_url = settings.DOMAIN_GOOGLE
 
     def form_valid(self, form):
         self.object = form.save(commit=False)

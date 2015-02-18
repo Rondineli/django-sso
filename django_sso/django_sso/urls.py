@@ -16,7 +16,7 @@ urlpatterns = patterns(
             'accounts.urls',
             namespace='accounts'
         )),
-    url(r'^personal_mail/$',
+    url(r'^personal_mail/',
         PersonalMailCreateView.as_view(), name='personal_mail'),
 
     url(

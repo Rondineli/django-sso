@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render_to_response
 from django.core.urlresolvers import reverse
-from django.core.urlresolvers import reverse_lazy
-
 from accounts.models import UserPersonalMail
 
 
