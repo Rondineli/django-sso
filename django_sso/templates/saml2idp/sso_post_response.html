@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% block corpo %}
+<script type="text/javascript">
+window.onload = function click_button(){
+document.getElementById("bt_continue").click();
+}
+</script>
+<form method="post" action="{{ response_url }}" id="mainForm" >
+<input type="hidden" name="SAMLResponse" value="{{ saml_response }}" />
+<input type="hidden" name="RelayState" value="{{ token }}" />
+<button class="btn btn-large btn-primary" type="submit" value="Redirecionando" id="bt_continue"/>
+</form>
+{% endblock %}
+{% endblock %}

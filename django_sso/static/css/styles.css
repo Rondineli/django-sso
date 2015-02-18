@@ -1,0 +1,307 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	outline: 0px;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+
+text-decoration: none;
+color: #333333;
+
+}
+
+body {
+	overflow: hidden;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+}
+
+#switcher {
+	width:100%;
+	background: #222;
+	height:60px;
+	position:fixed;
+	min-width: 970px;
+	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+}
+
+#logo {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+
+#logo a {
+	display:block;
+	text-indent:-9999px;
+	background: url(../images/sprite.png) no-repeat 0 0;
+	width: 238px;
+	height: 45px;
+	margin: 7px 0 0 20px;
+}
+#logo a:hover {
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=8);
+}
+
+#theme_select,
+#colour_select {
+	display: block;
+	color: #a2a8ad;
+	padding: 10px 0 0 13px;
+	margin: 12px 0 0 0;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+#theme_select {
+	background: url(../images/theme_dropdown.png) no-repeat 0 0;
+	width: 223px;
+	height: 26px;
+	margin-right: 10px;
+}
+#theme_select:hover,
+#theme_select.active { 
+	color: #fff;
+	position: relative;
+	z-index: 4;
+}
+#colour_select {
+	background: url(../images/colour_dropdown.png) no-repeat 0 0;
+	width: 133px;
+	height: 26px;
+	margin-right: 40px;
+}
+#colour_select:hover,
+#colour_select.active { 
+	color: #fff;
+	background-position: 0 -45px; 
+	position: relative;
+	z-index: 4;
+}
+#colour_list.disabled #colour_select { 
+	color: #a2a8ad;
+	background-position: 0 0; 
+	opacity: 0.4;
+	-moz-opacity: 0.4;
+	filter:alpha(opacity=4);
+}
+
+#colour_dropdown {
+	width: 120px !important;
+	margin-left: 46px;
+}
+
+#iframe {
+	margin-top: 60px;
+}
+
+#switcher ul li {
+	display: inline;
+	float: left;
+	position: relative;
+}
+#switcher ul li ul {
+	background: #222;
+	position:absolute;
+	margin: -5px 0 0 3px;
+	width:210px;
+	padding:0px 10px 5px 10px;
+	-webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	z-index:2;
+	display:none;
+}
+#switcher ul li ul li a span{
+	float: right;
+	font-weight: bold;
+	font-size: 10px;
+	text-transform: uppercase;
+	margin: -2px 0 0 0;
+	color:#fff;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+	padding: 0 5px;
+	line-height: 16px;
+	background: #dfdfdf;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+#theme_list {
+	margin-right: 200px;
+}
+#theme_list a#theme_select span { display: none;}
+
+#switcher ul li ul li a span.free {
+	color:#fff;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+	background: #ff4633;
+}
+
+
+#switcher ul li ul li a:hover{
+	color:#fff;
+	cursor:pointer;
+}
+
+#switcher ul li ul li { 
+	display: block; 
+	float: none;
+}
+
+#switcher ul li ul li a {
+	display:block;
+	color: #a2a8ad;
+	padding: 10px 0;
+	border-bottom: 1px solid #3a3c3f;
+	text-shadow: 0px 1px 1px rgba(0,0,0,1);
+	text-transform: capitalize;
+}
+
+#switcher ul li ul li:first-child {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	padding-top: 3px;
+}
+
+#switcher ul li ul li:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}
+#switcher ul li ul li:last-child a,
+#switcher ul li ul li.last a { border: 0; }
+
+/* close -------------------------------------------------------------- */
+
+li.remove_frame{
+	margin: 23px 30px 0 0;
+}
+
+li.remove_frame a{
+	display: block;
+	background: url(../images/sprite.png) no-repeat 0 -137px;
+	width: 15px;
+	height: 15px;
+	opacity: 0.2;
+	text-indent: -9999px;
+	-moz-opacity: 0.2;
+	filter:alpha(opacity=2);
+}
+li.remove_frame a:hover{
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter:alpha(opacity=5);
+}
+
+/* purchase / download -------------------------------------------------------------- */
+
+#purchaseLink,
+#detailsLink { 
+	margin: 18px 0 0 15px; 
+}
+#purchaseLink { margin-right: 40px; }
+#detailsLink { margin-left: 0px; }
+
+#purchaseLink a,
+#detailsLink a {
+	display: block;
+	background: url(../images/sprite.png) no-repeat 0 -100px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	height: 24px;
+	line-height: 24px;
+	padding-left: 35px;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.8);
+}
+#detailsLink a { 
+	background-position: 0 -61px; 
+	padding-left: 30px;
+}
+#purchaseLink a:hover,
+#detailsLink a:hover { color: #F47E00; }
+
+#switcher ul li ul li a span.data-wp {
+	background-color: #00AFD8;
+}
+
+#switcher ul li ul li a span.data-free {
+	background-color: #2ecc71;
+}
+
+
+#switcher ul li ul li a span.data-html {
+	background-color: #F47E00;
+}
+
+#switcher ul li ul li a:hover span {
+	color:#486815;
+	text-shadow: 0px 0px 1px rgba(255,255,255,0.1);
+	background: #9dd544;
+
+}
+
+

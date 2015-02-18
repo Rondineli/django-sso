@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/17/trunk/tests
+END
+samlp_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/17/trunk/tests/samlp_test.py
+END
+saml_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/tests/saml_test.py
+END
+md_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/17/trunk/tests/md_test.py
+END
+ds_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/trunk/tests/ds_test.py
+END

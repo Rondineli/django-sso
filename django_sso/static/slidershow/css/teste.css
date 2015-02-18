@@ -1,0 +1,32 @@
+/* Carousel Slider */
+
+
+/*.carousel-caption {
+	height: auto;
+	margin-left: 68%;
+	z-index: 30;
+	background: none;
+}*/
+
+/*.carousel-indicators {
+        top: 90%;
+        margin-right:0;
+	float: right;
+	z-index: 31;
+}
+*/
+
+.carousel-control {
+	z-index: 30;
+	top: 50%;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.caption-block {
+	position: absolute;
+	z-index: 20;
+	right: 0;
+	top: 0;
+	width: 300px;
+	height: 189px;
+}

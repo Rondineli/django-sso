@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-02 10:32-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: models.py:46
+msgid "username"
+msgstr ""
+
+#: models.py:47
+msgid ""
+"Obrigatório. 30 caracteres ou menos. Somente letras, dígitos e @/./+/-/_."
+msgstr ""
+
+#: models.py:53
+msgid "Informe um nome de usuário válido."
+msgstr ""
+
+#: models.py:58 models.py:91
+msgid "nome"
+msgstr ""
+
+#: models.py:60
+msgid "telefone"
+msgstr ""
+
+#: models.py:63
+msgid "Ex.: +55 11 91001 0101"
+msgstr ""
+
+#: models.py:65
+msgid "email"
+msgstr ""
+
+#: models.py:67
+msgid "está ativo"
+msgstr ""
+
+#: models.py:68
+msgid "é admin"
+msgstr ""
+
+#: models.py:71
+msgid "perfil de acesso"
+msgstr ""
+
+#: models.py:92
+msgid "usuários"
+msgstr ""
+
+#: models.py:95
+msgid "perspectiva"
+msgstr ""
+
+#: views.py:29
+msgid "Cadastro efetuado com sucesso"
+msgstr ""
+
+#: views.py:40
+msgid "Cadastro atualizado com sucesso"
+msgstr ""
+
+#: views.py:50
+msgid "Cadastro removido com sucesso"
+msgstr ""
+
+#: views.py:64
+msgid "[Pegasus] Alteração de senha"
+msgstr ""
+
+#: views.py:66
+msgid "Olá, {}. Sua senha no Pegasus foi alterada para {}"
+msgstr ""
+
+#: views.py:72 views.py:97 views.py:102
+msgid "Senha alterada com sucesso"
+msgstr ""
+
+#: views.py:87
+msgid "Preencha a senha"
+msgstr ""
+
+#: views.py:90
+msgid "A senha deve contem mais de 6 caracteres"
+msgstr ""
+
+#: views.py:93
+msgid "As senhas não conferem"
+msgstr ""
+
+#: views.py:106
+msgid "Ocorreu algum erro ao alterar senha"
+msgstr ""
+
+#: views.py:121
+msgid "Grupo cadastrado com sucesso"
+msgstr ""
+
+#: views.py:131
+msgid "Grupo atualizado com sucesso"
+msgstr ""
+
+#: views.py:141
+msgid "Grupo removido com sucesso"
+msgstr ""
+
+#: templates/accounts/group_form.html:7 templates/accounts/group_list.html:20
+msgid "Grupos de usuários Cadastrados"
+msgstr ""
+
+#: templates/accounts/group_form.html:11 templates/accounts/group_form.html:16
+msgid "Grupo de usuários"
+msgstr ""
+
+#: templates/accounts/group_form.html:26 templates/accounts/user_form.html:26
+msgid "Voltar"
+msgstr ""
+
+#: templates/accounts/group_list.html:9
+msgid "Você tem certeza que deseja remover o grupo de usuário?"
+msgstr ""
+
+#: templates/accounts/group_list.html:22
+msgid "Cadastrar novo Grupo de usuários"
+msgstr ""
+
+#: templates/accounts/group_list.html:27 templates/accounts/user_list.html:54
+msgid "Nome"
+msgstr ""
+
+#: templates/accounts/group_list.html:28 templates/accounts/user_list.html:55
+msgid "Data de Criação"
+msgstr ""
+
+#: templates/accounts/group_list.html:29 templates/accounts/user_list.html:56
+msgid "Data da Última Alteração"
+msgstr ""
+
+#: templates/accounts/group_list.html:30 templates/accounts/user_list.html:57
+msgid "Ações"
+msgstr ""
+
+#: templates/accounts/group_list.html:42 templates/accounts/user_list.html:68
+msgid "Alterar"
+msgstr ""
+
+#: templates/accounts/group_list.html:43 templates/accounts/user_list.html:69
+msgid "Excluir"
+msgstr ""
+
+#: templates/accounts/user_form.html:7 templates/accounts/user_list.html:47
+msgid "Usuários Cadastrados"
+msgstr ""
+
+#: templates/accounts/user_form.html:16
+msgid "Usuário"
+msgstr ""
+
+#: templates/accounts/user_list.html:9
+msgid "Você tem certeza que deseja remover o usuário?"
+msgstr ""
+
+#: templates/accounts/user_list.html:20
+msgid "Você tem certeza que deseja resetar a senha do usuário?"
+msgstr ""
+
+#: templates/accounts/user_list.html:49
+msgid "Cadastrar novo Usuário"
+msgstr ""
+
+#: templates/accounts/user_list.html:70 templates/accounts/user_list.html:94
+msgid "Alterar senha"
+msgstr ""
+
+#: templates/accounts/user_list.html:71
+msgid "Gerar senha e enviar por e-mail"
+msgstr ""
+
+#: templates/accounts/user_list.html:98
+msgid "Senha"
+msgstr ""
+
+#: templates/accounts/user_list.html:99 templates/accounts/user_list.html:103
+msgid "A senha deve conter 6 caracteres ou mais"
+msgstr ""
+
+#: templates/accounts/user_list.html:102
+msgid "Confirme a Senha"
+msgstr ""
+
+#: templates/accounts/user_list.html:107
+msgid "Salvar"
+msgstr ""
+
+#: templates/accounts/user_list.html:108
+msgid "Fechar"
+msgstr ""

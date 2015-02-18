@@ -1,0 +1,56 @@
+{% extends "internal_base.html" %}
+{% load i18n %}
+{% block extra_js %}
+{{ block.super }}
+<script type="text/javascript">
+$(function () {
+    $('.dataTable').on('click', '.remove', function() {
+        $a = $(this);
+        bootbox.confirm("{% trans 'Você tem certeza que deseja remover o grupo de usuário?' %}", function(result) {
+            if (result && result != null && result != undefined) {
+                $("#remove_form").attr("action", $a.attr('rel')).submit()
+            }
+        });
+        return false;
+    });
+});
+</script>
+{% endblock %}
+
+{% block page_title %}{% trans 'Grupos de usuários Cadastrados' %}{% endblock %}
+{% block content %}
+    <a href="{% url 'accounts:group_create' %}" class="btn btn-primary">{% trans 'Cadastrar novo Grupo de usuários' %}</a>
+    {% if object_list %}
+        <table class="dataTable table table-hover table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>{% trans 'Nome' %}</th>
+                <th>{% trans 'Data de Criação' %}</th>
+                <th>{% trans 'Data da Última Alteração' %}</th>
+                <th>{% trans 'Ações' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for group in object_list %}
+                <tr>
+                    <td>{{ group.name }}</td> 
+                    <td>{{ group.creation_time|date:"d/m/Y H:i" }}</td>
+                    <td>{{ group.modification_time|date:"d/m/Y H:i" }}</td>
+
+                    <td>
+                        <div class="action-buttons">
+                            <a href="{% url 'accounts:group_update' group.pk %}" class="green"><i class="icon-pencil bigger-130" title="{% trans 'Alterar' %}"></i></a>
+                            <a href="#" rel="{% url 'accounts:group_delete' group.pk %}" class="remove red"><i class="icon-trash bigger-130" title="{% trans 'Excluir' %}"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+<form id="remove_form" action="" method="POST">
+    {% csrf_token %}
+</form>
+
+{% endblock %}

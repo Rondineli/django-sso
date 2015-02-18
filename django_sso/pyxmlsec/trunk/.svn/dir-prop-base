@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 34
+*.pyc
+*~
+MANIFEST
+dist
+docs
+build
+
+END

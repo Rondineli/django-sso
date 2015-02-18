@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load bootstrap3 i18n %}
+{% block cabecalho %}
+<title> Cadastro </title>
+{% endblock %}
+{% block corpo %}
+    
+<div class='container'>
+    <form role="form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-xs-6">
+                {% bootstrap_form form %}
+                <input id="id_user" name='user_id' type='hidden' value={{ user.pk }}>
+            </div>
+        </div>
+        <div class="form-actions">
+            <input type="submit" value="Salvar" class="btn">
+        </div>
+    </form>
+</div>
+{% endblock %}

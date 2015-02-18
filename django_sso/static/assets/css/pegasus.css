@@ -1,0 +1,18 @@
+#iframeConsole {
+  width: 100%;
+  height: 170px;
+  border: none;
+}
+
+#consoleModal .modal-dialog {
+  width: 750px;
+}
+
+
+#modal-alert-detail .modal-dialog {
+    width: 900px;
+}
+
+.datepicker {
+    z-index: 2000 !important;
+}

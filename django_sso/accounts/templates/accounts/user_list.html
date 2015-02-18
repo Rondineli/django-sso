@@ -1,0 +1,115 @@
+{% extends "internal_base.html" %}
+{% load i18n %}
+{% block extra_js %}
+{{ block.super }}
+<script type="text/javascript">
+$(function () {
+    $('.dataTable').on('click', '.remove', function() {
+        $a = $(this);
+        bootbox.confirm("{% trans 'Você tem certeza que deseja remover o usuário?' %}", function(result) {
+            if (result && result != null && result != undefined) {
+                $("#remove_form").attr("action", $a.attr('rel')).submit()
+            }
+        });
+        return false;
+    });
+
+    //$('.random_password').click(function() {
+    $('.dataTable').on('click', '.random_password', function() {
+        $a = $(this);
+        bootbox.confirm("{% trans 'Você tem certeza que deseja resetar a senha do usuário?' %}", function(result) {
+            if (result && result != null && result != undefined) {
+                $("#random_password").attr("action", $a.attr('rel')).submit()
+            }
+        });
+        return false;
+    });
+
+    //$(".change_password").click(function () {
+    $('.dataTable').on('click', '.change_password', function() {
+        var url = $(this).data('url');
+        $('#change_password_modal form').attr('action', url);
+    });
+
+    $("#change_password_modal form").submit(function() {
+        var password1 = $("#id_password1", $(this)).val();
+        var password2 = $("#id_password2", $(this)).val();
+
+        if (password1 == "" || password1.length < 6 || password1 != password2) {
+            $("#id_password1", $(this)).focus();
+            return false;
+        }
+    });
+});
+</script>
+{% endblock %}
+
+{% block page_title %}{% trans 'Usuários Cadastrados' %}{% endblock %}
+{% block content %}
+    <a href="{% url 'accounts:create' %}" class="btn btn-primary">{% trans 'Cadastrar novo Usuário' %}</a>
+    {% if object_list %}
+        <table class="dataTable table table-hover table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>{% trans 'Nome' %}</th> 
+                <th>{% trans 'Data de Criação' %}</th>
+                <th>{% trans 'Data da Última Alteração' %}</th>
+                <th>{% trans 'Ações' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in object_list %}
+                <tr>
+                    <td>{{ user.name }}</td> 
+                    <td>{{ user.creation_time|date:"d/m/Y H:i" }}</td>
+                    <td>{{ user.modification_time|date:"d/m/Y H:i" }}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="{% url 'accounts:update' user.pk %}" class="green"><i class="icon-pencil bigger-130" title="{% trans 'Alterar' %}"></i></a>
+                            <a href="#" rel="{% url 'accounts:delete' user.pk %}" class="remove red"><i class="icon-trash bigger-130" title="{% trans 'Excluir' %}"></i></a>
+                            <a data-toggle="modal" data-target="#change_password_modal" href="#" data-url="{% url 'accounts:update_password' user.pk %}" class="change_password blue"><i class="icon-asterisk bigger-130" title="{% trans 'Alterar senha' %}"></i></a>
+                            <a href="#" rel="{% url 'accounts:generate_random_password' user.pk %}" class="random_password blue"><i class="icon-share-alt bigger-130" title="{% trans 'Gerar senha e enviar por e-mail' %}"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+<form id="remove_form" action="" method="POST">
+    {% csrf_token %}
+</form>
+
+<form id="random_password" action="" method="POST">
+    {% csrf_token %}
+</form>
+
+<div id="change_password_modal" class="modal fade" aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="POST">{% csrf_token %}
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">{% trans 'Alterar senha' %}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="id_password1">{% trans 'Senha' %}</label>
+                        <input class="form-control" type="password" pattern=".{6,}" title="{% trans 'A senha deve conter 6 caracteres ou mais' %}" name="password1" id="id_password1" value="" required="true"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_password2">{% trans 'Confirme a Senha' %}</label>
+                        <input class="form-control" type="password" pattern=".{6,}" title="{% trans 'A senha deve conter 6 caracteres ou mais' %}" name="password2" id="id_password2" value="" required="true"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">{% trans 'Salvar' %}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{% trans 'Fechar' %}</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+{% endblock %}
