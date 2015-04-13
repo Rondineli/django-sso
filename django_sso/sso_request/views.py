@@ -11,6 +11,10 @@ from django_sso.views import ViewPage
 
 
 class AssertView(ViewPage, View):
+    """
+        Class for post on data in sso request
+        and redirect session for google apps
+    """
     success_url = reverse_lazy('redirect_view')
     try:
         private_key_file_name = settings.SAML2IDP_PRIVATE_KEY_FILE
@@ -33,16 +37,10 @@ class AssertView(ViewPage, View):
             private_key_file_name=self.private_key_file_name,
             certificate_file_name=self.certificate_file_name
         )
-
-        """
-        Returns an HTML form that will POST back to the Service Point.
-        """
-#        print "get => %s" % (request.user.username)
         saml_response, resp_url = self.saml_resp.get_login_response(
             request,
             request.user.username
         )
-#        print saml_response
         token = request.GET.get('RelayState', None)
         return render_to_response(
             'saml2idp/sso_post_response.html', {

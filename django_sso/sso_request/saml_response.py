@@ -22,6 +22,7 @@ from django_auth_ldap.backend import LDAPBackend
 
 class SAML2Response:
     """
+    Obs: rewrite code for pep8
     Class for SAML 2.0 response construction.
     Tested with Google Apps.
     See sample response at:

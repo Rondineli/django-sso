@@ -5,6 +5,11 @@ from accounts.models import UserPersonalMail
 
 
 class UserPersonalMailMiddleware(object):
+    """
+        Middleware for crate personal personal mail 
+        This personal mail, will be used for recovery password and set new password
+        
+    """
     personal_mail_url = 'personal_mail'
     ignore_urls = ['/login', '/logout/', '/admin/']
 
